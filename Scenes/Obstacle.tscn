@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://7vef2ef86fpc"]
+
+[ext_resource type="Script" path="res://Scripts/ObstacleController.gd" id="1_4hido"]
+[ext_resource type="Texture2D" uid="uid://d0tccgeljrf8a" path="res://Assets/icon.svg" id="1_wxntm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg5vr"]
+size = Vector2(160.5, 155)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_4hido")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_wxntm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(9.53674e-07, -2.86102e-06)
+scale = Vector2(6.4, 6.5)
+
+[node name="ActionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+shape = SubResource("RectangleShape2D_sg5vr")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
