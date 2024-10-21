@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce2f1mqh4spo2"]
+
+[ext_resource type="Script" path="res://Scripts/TerrainScroller.gd" id="1_nlodb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qbhk"]
+size = Vector2(700, 50)
+
+[node name="StraightTerrain" type="StaticBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_nlodb")
+scroll_speed = 700.0
+
+[node name="TEMP" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -700.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-350, 25)
+shape = SubResource("RectangleShape2D_4qbhk")

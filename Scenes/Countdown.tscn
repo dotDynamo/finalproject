@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4nn40h88eptq"]
 
-[ext_resource type="Script" path="res://Scenes/CountdownController.gd" id="1_8c1vq"]
+[ext_resource type="Script" path="res://Scripts/CountdownController.gd" id="1_8c1vq"]
 [ext_resource type="Theme" uid="uid://ch3bxvehop6bq" path="res://Assets/Themes/CountdownTimer.tres" id="2_11c0u"]
 
 [node name="Countdown" type="Control"]

@@ -22,3 +22,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func fail_obstacle():
 	print("failed")
+
+func clear_obstacle():
+	print("cleared")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b57rnfj1a2dad"]
+[gd_scene load_steps=6 format=3 uid="uid://b57rnfj1a2dad"]
 
 [ext_resource type="PackedScene" uid="uid://b01w7v4d60g5u" path="res://Scenes/Background.tscn" id="1_atx58"]
 [ext_resource type="PackedScene" uid="uid://dujcthgah2bih" path="res://Scenes/Player.tscn" id="2_qynfm"]
+[ext_resource type="PackedScene" uid="uid://c3yt2dsptqmlp" path="res://Scenes/Terrain/TerrainGenerator.tscn" id="3_cnu1j"]
 [ext_resource type="PackedScene" uid="uid://7vef2ef86fpc" path="res://Scenes/Obstacle.tscn" id="3_txyw0"]
 [ext_resource type="PackedScene" uid="uid://d4nn40h88eptq" path="res://Scenes/Countdown.tscn" id="4_6jrvs"]
 
@@ -16,9 +17,8 @@ scroll_speed = 12.0
 scroll_speed = 12.0
 background_index = 1
 
-[node name="TerrainGenerator" type="Node2D" parent="."]
-
 [node name="ObstacleSpawner" type="Node2D" parent="."]
+visible = false
 
 [node name="Obstacle3" parent="ObstacleSpawner" instance=ExtResource("3_txyw0")]
 position = Vector2(2220, 254)
@@ -32,7 +32,21 @@ obstacle_type = "mid"
 position = Vector2(2219, 722)
 obstacle_type = "low"
 
+[node name="TerrainGenerator" parent="." instance=ExtResource("3_cnu1j")]
+
 [node name="Player" parent="." instance=ExtResource("2_qynfm")]
-position = Vector2(250, 744)
+position = Vector2(250, -26321)
+gravity = 60.0
 
 [node name="Countdown" parent="." instance=ExtResource("4_6jrvs")]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 254.0
+offset_top = 324.0
+offset_right = 1005.0
+offset_bottom = 613.0
+text = "Corregir el choque con el suelo, supongo que penalizar con menos tiempo al jugador.
+
+Hacer otro countdown para el inicio del nivel
+
+Importar img de irasutoro para que se vea mejor"

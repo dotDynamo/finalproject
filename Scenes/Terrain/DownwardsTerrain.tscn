@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbrswmmhmca61"]
+
+[ext_resource type="Script" path="res://Scripts/TerrainScroller.gd" id="1_uw7s8"]
+
+[node name="DownwardsTerrain" type="StaticBody2D"]
+script = ExtResource("1_uw7s8")
+scroll_speed = 700.0
+
+[node name="TEMP" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -700.0
+offset_top = -300.0
+offset_right = -255.0
+offset_bottom = -250.0
+grow_horizontal = 0
+
+[node name="SLOPETEMP" type="ColorRect" parent="."]
+offset_left = -342.0
+offset_top = -150.0
+offset_right = 87.21
+offset_bottom = -100.0
+rotation = 0.82205
+pivot_offset = Vector2(213.625, 25)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 50, 37, 16, -255, -300, -700, -300, -700, -250, -278, -249)
